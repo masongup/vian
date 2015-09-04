@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html>
+<head>
+<title>Vian</title>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+
+<script type="text/javascript" src="customevobject.js"></script>
+<script type="text/javascript" src="charmap101us.js"></script>
+<script type="text/javascript" src="minorModes/insert.js"></script>
+<script type="text/javascript" src="minorModes/replace.js"></script>
+<script type="text/javascript" src="minorModes/command.js"></script>
+<script type="text/javascript" src="minorModes/commandline.js"></script>
+<script type="text/javascript" src="majorModes/fundamental.js"></script>
+<script type="text/javascript" src="commandHandlers/vi.js"></script>
+<script type="text/javascript" src="storageEngines/google.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<script type="text/javascript" src="syntaxhighlighter.js"></script>
+<script type="text/javascript" src="view.js"></script>
+<script type="text/javascript" src="statusbar.js"></script>
+<script type="text/javascript" src="buffer.js"></script>
+<script type="text/javascript" src="frame.js"></script>
+<script type="text/javascript" src="vian.js"></script>
+
+</head><body onload="VIANEDITOR = new Vian(document.getElementById('editor'));">
+<a style="float:right;" href="http://sourceforge.net/projects/vian"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=203671&amp;type=13" width="120" height="30" alt="Get vian at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a>
+<p>Welcome to Vian.  Vian is a text editor written entirely in Javascript.  To try it out, click on the editor pane with the cursor in it to give it keyboard focus.</p>
+<div id="editor" style="float: left; margin: 5px 25px 25px 25px;"></div>
+<p>By default it acts like vi, but under the hood it looks a lot like Emacs. You can add major and minor modes easily by adding additional Javascript files, just like you would with emacs lisp.</p>
+<p>Vian also has a <a href="http://vianedit.appspot.com">back end</a> hosted on Google AppEngine that allows it to load and save Google Docs.</p>
+
+<h3>Design Details</h3>
+<ul>
+<li>Model/View/Controller - Vian uses the MVC architecture to separate form from function and make the entire editor more modular.  It also allows nice features like multiple split views of a single buffer.</li>
+<li>Event-based - Vian uses Javascript's event model to propagate events to listeners.  Multiple views can listen for a single buffer's change event, for example.</li>
+<li>DOM manipulation - Everything Vian draws on screen is through manipulation of the Document Object Model.  There is no HTML5 canvas or use of contentEditable.  This has both good and bad implications.</li>
+</ul>
+
+<!--textarea id="console" cols="80" rows="3"></textarea-->
+
+</body>
+</html>
